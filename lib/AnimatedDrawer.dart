@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Drawer_Items.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class AnimatedDrawer extends StatefulWidget {
   const AnimatedDrawer({Key? key}) : super(key: key);
 
@@ -114,12 +114,32 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
             ),
             //----------------------//
             Divider(height: 7,color: Colors.grey,indent: 20,endIndent: 230,),
-           Column(
-             //build the drawer here :)
-           )
+           Expanded(
+             child: SingleChildScrollView(
+               child: Column(
+                 children: [
+                   BuildMenuItem(Title: "Track order",icon:FontAwesomeIcons.mapLocationDot, function: (){}),
+                   BuildMenuItem(Title: "Track order",icon: FontAwesomeIcons.bars, function: (){}),
+                   BuildMenuItem(Title: "Track order",icon: FontAwesomeIcons.circleDollarToSlot, function: (){}),
+                   BuildMenuItem(Title: "Track order",icon: FontAwesomeIcons.utensils, function: (){}),
+                   Divider(height: 7,color: Colors.grey,indent: 20,endIndent: 230,),
+
+                 ],
+               ),
+             ),
+           ),
+
           ],
         ),
       ),
     );
+  }
+
+  Widget BuildMenuItem(
+      {required String Title,required IconData icon, required Function() function}) {
+    final Color = Colors.white;
+   return ListTile( leading: Icon(icon,size: 25),iconColor: Colors.black,
+     title: Text("$Title", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+     onTap: function,);
   }
 }
