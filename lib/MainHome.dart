@@ -23,13 +23,14 @@ class _MainHomeState extends State<MainHome> {
   Widget build(BuildContext context) {
 
     return AnimatedContainer(
-      transform: Matrix4.translationValues(xOffset, yOffset, 0)
+      transform: Matrix4.translationValues(xOffset, yOffset,0)
         ..scale(scaleFactor),
+
       duration: Duration(milliseconds: 250),
       decoration: BoxDecoration(
         borderRadius:
         isOpen ? BorderRadius.circular(30) : BorderRadius.circular(0),
-        color: Colors.white,
+        color: isOpen? Colors.grey.shade300 : Colors.white,
       ),
 
       child: SafeArea(
@@ -53,7 +54,7 @@ class _MainHomeState extends State<MainHome> {
                         }
                       });
                     },
-                    icon: isOpen ? Icon(Icons.arrow_back_ios,size: 20,) : Icon(Icons.menu)),
+                    icon: isOpen ? Icon(Icons.arrow_back_ios,size: 20,) : Icon(Icons.menu,size: 30,)),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -103,10 +104,14 @@ class _MainHomeState extends State<MainHome> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 2,),
                     Text(
                       "Get accurate pricing and menu listing",
                       style: TextStyle(color: Colors.grey.shade600),
-                    )
+                    ),
+                    Row(children: [
+
+                    ],)
                   ],
                 )
               ],
