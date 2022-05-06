@@ -15,6 +15,7 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -3,8 +3,9 @@ import 'package:kfc/HomeScreen.dart';
 import 'package:flutter/services.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor:Colors.grey.shade300,
-
+      systemNavigationBarColor: Colors.black, // navigation bar color
+      statusBarColor: Colors.white,
+  statusBarIconBrightness: Brightness.dark
   ));
   runApp(const MyApp());
 }
@@ -14,7 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
 
+      ),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );

@@ -36,9 +36,11 @@ class _MainHomeState extends State<MainHome> {
         borderRadius:
             isOpen ? BorderRadius.circular(30) : BorderRadius.circular(0),
         color: isOpen ? Colors.grey.shade300 : Colors.grey.shade50,
+
       ),
       child: Column(
         children: [
+          //AppBar//
           Container(
 
             decoration: BoxDecoration(
@@ -187,6 +189,118 @@ class _MainHomeState extends State<MainHome> {
               ),
             ),
           ),
+          //--------------------//
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                Text("Exclusive Offers 🍟",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                    Divider(color: Colors.red,thickness: 2.5,indent: 0,endIndent: 330,),
+                    //Exclusive Offers//
+                    Container(
+                      height: 200,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+                                print("first clicked");
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 200,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer6.jpg"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            GestureDetector(
+                              onTap: (){
+                                print("2 clicked");
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 200,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer2.png"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            GestureDetector(
+                              onTap:(){
+                                print("3 clicked");
+                              },
+                              child: Container(
+                                height: 200,
+                                width: 300,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer3.jpg"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            GestureDetector(
+                              onTap: (){
+                                print("4 clicked");
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 200,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer4.jpg"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            GestureDetector(
+                              onTap: (){
+                                print("5 clicked");
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 200,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer5.jpg"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            GestureDetector(
+                              onTap: (){
+                                print("6 clicked");
+                              },
+                              child: Container(
+                                width: 300,
+                                height: 200,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image(image: AssetImage("assets/images/offer1.jpg"),filterQuality: FilterQuality.high,fit: BoxFit.fill,),),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    //--------------//
+                    SizedBox(height: 15,),
+                    Row(
+                      children: [
+                        Text("Explore Menu 🍗",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                        Spacer(),
+                        Text("View All "),
+                        Icon(FontAwesomeIcons.squareCaretRight,size: 17,color: Colors.black,),
+
+                      ],
+                    ),
+
+              ]),
+            ),
+          )
         ],
       ),
     );
